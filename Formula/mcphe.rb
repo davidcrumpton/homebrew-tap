@@ -5,13 +5,13 @@
 class Mcphe < Formula
   desc "MCP host engine with a JavaScript plugin architecture"
   homepage "https://github.com/davidcrumpton/mcp-host-engine"
-  version "0.5.82"
+  version "0.5.83"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/davidcrumpton/mcp-host-engine/releases/download/v0.5.82/mcp-host-engine_0.5.82_darwin_amd64.tar.gz"
-      sha256 "b2ee1367b1c4e44b307ff7b01be9d786f919f24f4c976bfcd3d693da40227453"
+      url "https://github.com/davidcrumpton/mcp-host-engine/releases/download/v0.5.83/mcp-host-engine_0.5.83_darwin_amd64.tar.gz"
+      sha256 "a7f86cc4e87fc0d91ba3c40ec36e7669fd3bd10f619ace6c749d277573040cad"
 
       define_method(:install) do
         bin.install "mcphe"
@@ -23,15 +23,20 @@ class Mcphe < Formula
           # Apple Silicon, /usr/local on Intel, .linuxbrew on Linuxbrew). Rewrite
           # it to wherever the plugins were just installed, so a fresh install
           # finds its plugins without the user having to edit anything.
+          #
+          # opt_share, not share: during install `share` resolves inside the keg
+          # (Cellar/mcphe/<version>/share), so the config would pin a path that
+          # vanishes on the next `brew upgrade`. Homebrew never rewrites an
+          # existing config, so that would break silently and permanently.
           inreplace etc/"mcphe/config.yaml",
                     "plugin_dir: /usr/share/mcphe/plugins",
-                    "plugin_dir: #{share}/mcphe/plugins"
+                    "plugin_dir: #{opt_share}/mcphe/plugins"
         end
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/davidcrumpton/mcp-host-engine/releases/download/v0.5.82/mcp-host-engine_0.5.82_darwin_arm64.tar.gz"
-      sha256 "e44c98e07d3f1a582abea94c78fee4170b4c14b364c5a0474689712b546a1620"
+      url "https://github.com/davidcrumpton/mcp-host-engine/releases/download/v0.5.83/mcp-host-engine_0.5.83_darwin_arm64.tar.gz"
+      sha256 "7a1434de43b70f53423ca121faa65c225f8c51944fb64328d47d84191e067650"
 
       define_method(:install) do
         bin.install "mcphe"
@@ -43,9 +48,14 @@ class Mcphe < Formula
           # Apple Silicon, /usr/local on Intel, .linuxbrew on Linuxbrew). Rewrite
           # it to wherever the plugins were just installed, so a fresh install
           # finds its plugins without the user having to edit anything.
+          #
+          # opt_share, not share: during install `share` resolves inside the keg
+          # (Cellar/mcphe/<version>/share), so the config would pin a path that
+          # vanishes on the next `brew upgrade`. Homebrew never rewrites an
+          # existing config, so that would break silently and permanently.
           inreplace etc/"mcphe/config.yaml",
                     "plugin_dir: /usr/share/mcphe/plugins",
-                    "plugin_dir: #{share}/mcphe/plugins"
+                    "plugin_dir: #{opt_share}/mcphe/plugins"
         end
       end
     end
@@ -53,8 +63,8 @@ class Mcphe < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/davidcrumpton/mcp-host-engine/releases/download/v0.5.82/mcp-host-engine_0.5.82_linux_amd64.tar.gz"
-      sha256 "c4e04d8aef9ee1fb64bb20cde1eb9fc7b3c0e0b7232b54d5f9cc2b7ecbbbb67f"
+      url "https://github.com/davidcrumpton/mcp-host-engine/releases/download/v0.5.83/mcp-host-engine_0.5.83_linux_amd64.tar.gz"
+      sha256 "b5eee550a5c24dd7f89107984cc8c0a5f332639031dbf83a5d0a28cf418cc765"
       define_method(:install) do
         bin.install "mcphe"
         (share/"mcphe/plugins").install Dir["plugins/*"]
@@ -65,15 +75,20 @@ class Mcphe < Formula
           # Apple Silicon, /usr/local on Intel, .linuxbrew on Linuxbrew). Rewrite
           # it to wherever the plugins were just installed, so a fresh install
           # finds its plugins without the user having to edit anything.
+          #
+          # opt_share, not share: during install `share` resolves inside the keg
+          # (Cellar/mcphe/<version>/share), so the config would pin a path that
+          # vanishes on the next `brew upgrade`. Homebrew never rewrites an
+          # existing config, so that would break silently and permanently.
           inreplace etc/"mcphe/config.yaml",
                     "plugin_dir: /usr/share/mcphe/plugins",
-                    "plugin_dir: #{share}/mcphe/plugins"
+                    "plugin_dir: #{opt_share}/mcphe/plugins"
         end
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/davidcrumpton/mcp-host-engine/releases/download/v0.5.82/mcp-host-engine_0.5.82_linux_arm64.tar.gz"
-      sha256 "3fa798086dcd20e69485ba5ee36b8d096a516118c2f58f250bd0c28576e8386e"
+      url "https://github.com/davidcrumpton/mcp-host-engine/releases/download/v0.5.83/mcp-host-engine_0.5.83_linux_arm64.tar.gz"
+      sha256 "1336e3eda6ff8c8b402cd812cdeaaaf866fb74b64d73c8eabe272065429d2992"
       define_method(:install) do
         bin.install "mcphe"
         (share/"mcphe/plugins").install Dir["plugins/*"]
@@ -84,9 +99,14 @@ class Mcphe < Formula
           # Apple Silicon, /usr/local on Intel, .linuxbrew on Linuxbrew). Rewrite
           # it to wherever the plugins were just installed, so a fresh install
           # finds its plugins without the user having to edit anything.
+          #
+          # opt_share, not share: during install `share` resolves inside the keg
+          # (Cellar/mcphe/<version>/share), so the config would pin a path that
+          # vanishes on the next `brew upgrade`. Homebrew never rewrites an
+          # existing config, so that would break silently and permanently.
           inreplace etc/"mcphe/config.yaml",
                     "plugin_dir: /usr/share/mcphe/plugins",
-                    "plugin_dir: #{share}/mcphe/plugins"
+                    "plugin_dir: #{opt_share}/mcphe/plugins"
         end
       end
     end
