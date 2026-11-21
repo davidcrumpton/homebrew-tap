@@ -2,35 +2,35 @@
 # homebrew/llmctrlx.rb.template in davidcrumpton/llm-control-engine. DO NOT EDIT:
 # it is rewritten on every release. Report issues in that repository.
 #
-# Version 0.8.37. Checksums are those published with the release.
+# Version 0.8.38. Checksums are those published with the release.
 
 class Llmctrlx < Formula
   desc "Local LLM orchestration and execution CLI with tool and plugin support"
   homepage "https://github.com/davidcrumpton/llm-control-engine"
-  version "0.8.37"
+  version "0.8.38"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
       url "https://github.com/davidcrumpton/llm-control-engine/releases/download/v#{version}/llmctrlx-#{version}-macos-arm64.tar.gz"
-      sha256 "b568e1db114a1517df54bff95a7ea887c771ae849695db5c2db5abbab6e45d70"
+      sha256 "22b275689e2e2dce9cdfa48adf0a379707b6cbdc4739aa3956a9b589c5375a47"
     end
 
     on_intel do
       url "https://github.com/davidcrumpton/llm-control-engine/releases/download/v#{version}/llmctrlx-#{version}-macos-x64.tar.gz"
-      sha256 "07412d5041bc38558261122e14507ba4b01fb6ee9e92a39c1d70fd63bc471d14"
+      sha256 "317e08f2d644660c53b55d0914543c3d2f7a413798b208aae06cb4c7aadc9dbe"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/davidcrumpton/llm-control-engine/releases/download/v#{version}/llmctrlx-#{version}-linux-arm64.tar.gz"
-      sha256 "47d4b392164dbebcb88b62bd4e3fd94777c850be672033a9c97d4e8a63bf0b1b"
+      sha256 "86589c32cff823fa804ae7f8eb12ef31eeb16ea7fdb8d4a95758bf38da736dd8"
     end
 
     on_intel do
       url "https://github.com/davidcrumpton/llm-control-engine/releases/download/v#{version}/llmctrlx-#{version}-linux-x64.tar.gz"
-      sha256 "045903ab23c3e5f7d52e2ae5cb8cbf67c78920dab96cfd070051b0fb08776049"
+      sha256 "921399f2289fcce19d4acde6e9cbeb2d3385a10d22d24068433b85916a7bf3e1"
     end
   end
 
