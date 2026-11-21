@@ -5,13 +5,13 @@
 class Tokenmgr < Formula
   desc "Self-describing signed bearer tokens for homelab infrastructure"
   homepage "https://github.com/davidcrumpton/tokenmgr"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/davidcrumpton/tokenmgr/releases/download/v0.1.1/tokenmgr_0.1.1_darwin_amd64.tar.gz"
-      sha256 "9ef70b98ca82f4811a505303a097954d579517822def5ff7e2f94eca554d5bac"
+      url "https://github.com/davidcrumpton/tokenmgr/releases/download/v0.1.2/tokenmgr_0.1.2_darwin_amd64.tar.gz"
+      sha256 "ebdcb7103ef4d93deb8949e651978486e6e253d0964e117bf4599fcf5f02f07a"
 
       define_method(:install) do
         bin.install "tokenmgr"
@@ -21,8 +21,8 @@ class Tokenmgr < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/davidcrumpton/tokenmgr/releases/download/v0.1.1/tokenmgr_0.1.1_darwin_arm64.tar.gz"
-      sha256 "95934b679b0985384309ef838ca70097c226ddf65f40f36abd394e34ee92448c"
+      url "https://github.com/davidcrumpton/tokenmgr/releases/download/v0.1.2/tokenmgr_0.1.2_darwin_arm64.tar.gz"
+      sha256 "5b6d7a367c23205c0af2c24e8a30110e89812fbc8b2715b1aa15d4d8fe4ec0f6"
 
       define_method(:install) do
         bin.install "tokenmgr"
@@ -35,8 +35,8 @@ class Tokenmgr < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/davidcrumpton/tokenmgr/releases/download/v0.1.1/tokenmgr_0.1.1_linux_amd64.tar.gz"
-      sha256 "d75f7f91c45a00fdd3e5dc2ace19c7e780ee1b7d9d31d5d1ffa41c64a2ad5945"
+      url "https://github.com/davidcrumpton/tokenmgr/releases/download/v0.1.2/tokenmgr_0.1.2_linux_amd64.tar.gz"
+      sha256 "f70bdfa3319a1eac03d5982200d6d1addb397f9c1f3f2336ce6754834b15c171"
       define_method(:install) do
         bin.install "tokenmgr"
         # The README's walkthrough uses the example schemas, so keep them in the
@@ -45,8 +45,8 @@ class Tokenmgr < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/davidcrumpton/tokenmgr/releases/download/v0.1.1/tokenmgr_0.1.1_linux_arm64.tar.gz"
-      sha256 "7907e1208ffb75d3cd8951bf8d6ea5bbd50ae1094efb3b13ba1e94d434859e10"
+      url "https://github.com/davidcrumpton/tokenmgr/releases/download/v0.1.2/tokenmgr_0.1.2_linux_arm64.tar.gz"
+      sha256 "171f412a408c944c062aff75723c916c86e9283cb72b7a7e5a79f180c6908ff0"
       define_method(:install) do
         bin.install "tokenmgr"
         # The README's walkthrough uses the example schemas, so keep them in the
