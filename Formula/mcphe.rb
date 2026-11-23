@@ -5,13 +5,13 @@
 class Mcphe < Formula
   desc "MCP host engine with a JavaScript plugin architecture"
   homepage "https://github.com/davidcrumpton/mcp-host-engine"
-  version "0.5.84"
+  version "0.6.00"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/davidcrumpton/mcp-host-engine/releases/download/v0.5.84/mcp-host-engine_0.5.84_darwin_amd64.tar.gz"
-      sha256 "eb5141b0a8babb705e912ac8a91243409a4bba515df5ef62ac3e05418b068b29"
+      url "https://github.com/davidcrumpton/mcp-host-engine/releases/download/v0.6.00/mcp-host-engine_0.6.00_darwin_amd64.tar.gz"
+      sha256 "7cf4b9d590cb18dbf01d9b2358e8687886b60ec973fe04e9a59ba25249306fb7"
 
       define_method(:install) do
         bin.install "mcphe"
@@ -35,8 +35,8 @@ class Mcphe < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/davidcrumpton/mcp-host-engine/releases/download/v0.5.84/mcp-host-engine_0.5.84_darwin_arm64.tar.gz"
-      sha256 "cf0d96b6b444b9afd6f8d2759399ca22d67ea0b7eb0da69c20c3baeb4318ec20"
+      url "https://github.com/davidcrumpton/mcp-host-engine/releases/download/v0.6.00/mcp-host-engine_0.6.00_darwin_arm64.tar.gz"
+      sha256 "6e8684eda69db890ea1d07a2b6ad5ca5a1a45bddb83142e2d66a560d3d276003"
 
       define_method(:install) do
         bin.install "mcphe"
@@ -63,8 +63,8 @@ class Mcphe < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/davidcrumpton/mcp-host-engine/releases/download/v0.5.84/mcp-host-engine_0.5.84_linux_amd64.tar.gz"
-      sha256 "c3c6776152990f819e4108a4706b55e5ec8dcfc2a3e806fbecb32955b89333be"
+      url "https://github.com/davidcrumpton/mcp-host-engine/releases/download/v0.6.00/mcp-host-engine_0.6.00_linux_amd64.tar.gz"
+      sha256 "fb305f6e27a556f5cae94edbe5a459a8b0fecb0cc08b31b3493779d3cb42d965"
       define_method(:install) do
         bin.install "mcphe"
         (share/"mcphe/plugins").install Dir["plugins/*"]
@@ -87,8 +87,8 @@ class Mcphe < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/davidcrumpton/mcp-host-engine/releases/download/v0.5.84/mcp-host-engine_0.5.84_linux_arm64.tar.gz"
-      sha256 "fea9f0d1935ea7be486156eb34c5278d8f553da2681ac14636665b4389cb2493"
+      url "https://github.com/davidcrumpton/mcp-host-engine/releases/download/v0.6.00/mcp-host-engine_0.6.00_linux_arm64.tar.gz"
+      sha256 "8281547dc365a067d7a73505d426c45e81fd7fba276e42cab54773dd71715497"
       define_method(:install) do
         bin.install "mcphe"
         (share/"mcphe/plugins").install Dir["plugins/*"]
